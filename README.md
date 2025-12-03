@@ -3,74 +3,74 @@
 selenium_projetct is study code from other source
 
 ┌───────────────────────────────────┐
-│              START               │
+│ START │
 └───────────────────────────────────┘
-                │
-                ▼
+│
+▼
 ┌───────────────────────────────────┐
 │ Initialize Chrome browser (headless)│
-│ Set WebDriverWait                 │
+│ Set WebDriverWait │
 └───────────────────────────────────┘
-                │
-                ▼
+│
+▼
 ┌───────────────────────────────────┐
-│ For page = 1 → total_page         │
+│ For page = 1 → total_page │
 └───────────────────────────────────┘
-                │
-                ▼
+│
+▼
 ┌───────────────────────────────────┐
-│ scrape_index(page)                │
-│ - Build index URL                 │
-│ - browser.get(url)                │
-│ - Wait until .item appears        │
+│ scrape_index(page) │
+│ - Build index URL │
+│ - browser.get(url) │
+│ - Wait until .item appears │
 └───────────────────────────────────┘
-                │
-                ▼
+│
+▼
 ┌───────────────────────────────────┐
-│ parse_index()                     │
-│ - Find all <a class="name">       │
-│ - Extract hrefs                   │
-│ - Return detail_url list          │
+│ parse_index() │
+│ - Find all <a class="name"> │
+│ - Extract hrefs │
+│ - Return detail_url list │
 └───────────────────────────────────┘
-                │
-                ▼
+│
+▼
 ┌──────────────────────────────────────────────┐
-│ For each detail_url in detail_urls           │
+│ For each detail_url in detail_urls │
 └──────────────────────────────────────────────┘
-                │
-                ▼
+│
+▼
 ┌───────────────────────────────────┐
-│ scrape_detail(detail_url)         │
-│ - browser.get(detail_url)         │
-│ - Wait for <h2> to load           │
+│ scrape_detail(detail_url) │
+│ - browser.get(detail_url) │
+│ - Wait for <h2> to load │
 └───────────────────────────────────┘
-                │
-                ▼
+│
+▼
 ┌───────────────────────────────────┐
-│ parse_detail()                    │
-│ - name = find <h2>                │
-│ - categories = find .categories   │
-│ - score = find .score             │
-│ - return data tuple               │
+│ parse_detail() │
+│ - name = find <h2> │
+│ - categories = find .categories │
+│ - score = find .score │
+│ - return data tuple │
 └───────────────────────────────────┘
-                │
-                ▼
+│
+▼
 ┌───────────────────────────────────┐
-│ Print / store detail_data         │
+│ Print / store detail_data │
 └───────────────────────────────────┘
-                │
-                ▼
-       (Loop until all detail pages)
-                │
-                ▼
-       (Loop until all index pages)
-                │
-                ▼
+│
+▼
+(Loop until all detail pages)
+│
+▼
+(Loop until all index pages)
+│
+▼
 ┌───────────────────────────────────┐
-│ Close browser (quit)              │
+│ Close browser (quit) │
 └───────────────────────────────────┘
-                │
-                ▼
+│
+▼
 ┌───────────────────────────────────┐
-│                END                │
+│ END │
 └───────────────────────────────────┘
